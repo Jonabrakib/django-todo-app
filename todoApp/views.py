@@ -6,11 +6,17 @@ from .models import *
 
 # Create your views here.
 def index(request):
-    current_user = request.user
-    user  = User.objects.get(id=current_user.id)
-    task = user.task_set.all()
-    context={'task':task}
-    return render (request, 'index.html', context)
+    if request.user.is_authenticated:
+        current_user = request.user
+        user  = User.objects.get(id=current_user.id)
+        task = user.task_set.all()
+        context={'task':task}
+        return render (request, 'index.html', context)
+    else:
+        return redirect ('login')
+
+        
+    
 def register(request):
     if request.method =='POST':
         first_name =request.POST['first_name']
