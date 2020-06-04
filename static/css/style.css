@@ -1,0 +1,58 @@
+.header{
+    background-color: antiquewhite;
+    padding: 10px 0px;
+}
+.header ul li{
+    list-style: none;
+    display: inline;
+    padding-right: 10px;
+}
+.header a{
+    text-decoration: none;
+    color: black;
+}
+.login form{
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    padding-top: 3rem;
+}
+.login form button{
+    display: block;
+    margin: 0 auto;
+
+}
+
+.signup form{
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    padding-top: 3rem;
+}
+.signup form button{
+    display: block;
+    margin: 0 auto;
+
+}
+.add-task form{
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    padding-top: 3rem;
+}
+.add-task form button{
+    display: block;
+    margin: 0 auto;
+
+}
+.update-task form{
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    padding-top: 3rem;
+}
+.update-task form button{
+    display: block;
+    margin: 0 auto;
+
+}

@@ -1,0 +1,45 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+    <section class="main pt-10" >
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                  {% if user.is_authenticated %}
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            
+                            <th scope="col">Works to Do</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% for tasks in task %}
+                          <tr>
+      
+                            <td>{{tasks.task}}</td>
+                            {% if tasks.complete == False %}
+                            <td>On Going</td>
+                            <td><a href="{% url 'updatetask' user.id tasks.id %}">Edit</a>|<a href="{% url 'delete' tasks.id  %}">Delete</a></td>
+                            {% elif tasks.complete == True %}
+                            <td>Completed</td>
+                            <td><a href="{% url 'updatetask' user.id tasks.id  %}">Edit</a>|<a href="{% url 'delete' tasks.id  %}">Delete</a></td>
+                            {% else %}
+                            <td></td>
+                            {% endif %}
+                          </tr>
+                          {% endfor %}
+                        </tbody>
+                      </table>
+                      {% else %}
+                      <p>ADD Task</p>
+                      {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endblock content %}
+
+

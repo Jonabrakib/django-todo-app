@@ -1,0 +1,13 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<section class="add-task">
+<form action="" method="POST">
+    {% csrf_token %} 
+    <div class="form-group">
+        <input type="text" placeholder="task" name="task" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+</form>
+</section>
+{% endblock content %}
